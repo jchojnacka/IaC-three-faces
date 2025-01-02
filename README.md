@@ -35,65 +35,76 @@ Each subfolder in this repository contains code for provisioning the **exact sam
 1. **Navigate** to the `cloudformation` folder:
    ```bash
    cd cloudformation
+   ```
    
-  Deploy using the AWS CLI:
-  ```bash
-  aws cloudformation deploy \
+2. **Deploy** using the AWS CLI:
+   ```bash
+   aws cloudformation deploy \
     --template-file template.yaml \
     --stack-name MyCFStack \
-    --capabilities CAPABILITY_NAMED_IAM ```
+    --capabilities CAPABILITY_NAMED_IAM
+   ```
 
-  After deployment completes, retrieve outputs (API endpoint, S3 website URL):
-  ```bash
-  aws cloudformation describe-stacks \
+3. After deployment completes, **retrieve outputs** (API endpoint, S3 website URL):
+   ```bash
+   aws cloudformation describe-stacks \
     --stack-name MyCFStack \
-    --query "Stacks[0].Outputs" ```
+    --query "Stacks[0].Outputs
+   ```
 
-  Test your API Gateway endpoint (e.g., /hello) and check the S3 static page (if you’ve uploaded index.html).
+4. **Test your API Gateway endpoint** (e.g., /hello) and check the S3 static page (if you’ve uploaded index.html).
 
 ---
 
 
 ### 2. AWS CDK 
 
-Install the AWS CDK globally if not already
-  ```bash 
-  npm install -g aws-cdk```
+1. **Install the AWS CDK** globally if not already
+   ```bash 
+   npm install -g aws-cdk
+   ```
 
-Navigate to the cdk folder:
-  ```bash 
-  cd cdk ```
+2. **Navigate** to the `cdk` folder:
+   ```bash 
+   cd cdk
+   ```
 
-Install project dependencies (TypeScript example):
-  ```bash 
-  npm install ```
+3. **Install** project dependencies (TypeScript example):
+   ```bash 
+   npm install
+   ```
 
-Synthesize and deploy:
-  ```bash 
-  cdk synth
-  cdk deploy ```
+4. **Synthesize and deploy**:
+   ```bash 
+   cdk synth
+   cdk deploy
+   ```
 
-Check the deployment outputs (API endpoint and S3 website URL) in the terminal or the AWS console.
+**Check the deployment outputs** (API endpoint and S3 website URL) in the terminal or the AWS console.
 
 ---
 
 ### 3. Terraform
 
-Navigate to the terraform folder:
-  ```bash 
-  cd terraform ```
+1. **Navigate** to the `terraform` folder:
+   ```bash 
+   cd terraform
+   ```
 
-Initialize Terraform:
-  ```bash 
-  terraform init ```
+2. **Initialize** Terraform:
+   ```bash 
+   terraform init
+   ```
 
-Plan your changes:
-  ```bash 
-  terraform plan ```
+3. **Plan** your changes:
+   ```bash 
+   terraform plan
+   ```
 
-Apply the configuration:
-  ```bash 
-  terraform apply ```
+4. **Apply** the configuration:
+   ```bash 
+   terraform apply
+   ```
 
-Confirm the changes; Terraform will output the API endpoint and S3 website URL once deployment completes.
+**Confirm the changes**; Terraform will output the API endpoint and S3 website URL once deployment completes.
    
