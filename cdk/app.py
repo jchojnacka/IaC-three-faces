@@ -35,7 +35,7 @@ class MyHelloWorldStack(Stack):
                   description="Access your static HTML page from this S3 bucket website endpoint.",
                   value=bucket.bucket_website_url)
         
-        my_api_endpoint_output = CfnOutput(self, "ApiEndpoint",
+        CfnOutput(self, "ApiEndpoint",
                   description="Invoke the Lambda by sending a GET request to /hello",
                   value=api.url + "hello")
 
