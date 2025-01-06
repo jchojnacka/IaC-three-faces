@@ -22,11 +22,16 @@ Each subfolder in this repository contains code for provisioning the **exact sam
 
 ## Prerequisites
 
-- **AWS CLI** installed and configured (for CloudFormation, plus general AWS interactions)  
-- **Node.js & npm** (for AWS CDK if using TypeScript)  
-- **Python** (if using AWS CDK in Python, or if your Lambda code is in Python)  
+- **AWS CLI** installed and configured (for CloudFormation, plus general AWS interactions)   
+- **Python** (for AWS CDK)  
 - **Terraform** (for the Terraform approach)  
 - **An AWS account** with permissions to create Lambda, API Gateway, and S3 resources  
+
+---
+
+## Architecture
+
+![alt text](architecture.png)
 
 ---
 
@@ -36,19 +41,18 @@ Each subfolder in this repository contains code for provisioning the **exact sam
    ```bash
    cd cloudformation
    ```
-   
 2. **Deploy** using the AWS CLI:
    ```bash
    aws cloudformation deploy \
-    --template-file template.yaml \
-    --stack-name MyCFStack \
-    --capabilities CAPABILITY_NAMED_IAM
+      --template-file template.yaml \
+      --stack-name stack-name \
+      --capabilities CAPABILITY_NAMED_IAM 
    ```
 
 3. After deployment completes, **retrieve outputs** (API endpoint, S3 website URL):
    ```bash
    aws cloudformation describe-stacks \
-    --stack-name MyCFStack \
+    --stack-name stack-name \
     --query "Stacks[0].Outputs
    ```
 
@@ -69,9 +73,9 @@ Each subfolder in this repository contains code for provisioning the **exact sam
    cd cdk
    ```
 
-3. **Install** project dependencies (TypeScript example):
+3. **Bootstrap** the environment:
    ```bash 
-   npm install
+   cdk bootstrap
    ```
 
 4. **Synthesize and deploy**:
@@ -96,7 +100,7 @@ Each subfolder in this repository contains code for provisioning the **exact sam
    terraform init
    ```
 
-3. **Plan** your changes:
+3. **Plan** your changes (dry-run):
    ```bash 
    terraform plan
    ```
