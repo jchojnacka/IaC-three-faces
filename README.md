@@ -106,5 +106,10 @@ Each subfolder in this repository contains code for provisioning the **exact sam
    terraform apply
    ```
 
+5. **Destroy** after your test, remove all resources:
+   ```bash 
+   terraform destroy
+   ```
+
 **Confirm the changes**; Terraform will output the API endpoint and S3 website URL once deployment completes.
    
