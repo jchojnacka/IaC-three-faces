@@ -36,4 +36,6 @@ resource "aws_s3_bucket_policy" "my_website_bucket_policy" {
   ]
 }
 POLICY
+
+  depends_on = [aws_s3_bucket_public_access_block.my_website_bucket_public_access_block]
 }

@@ -25,7 +25,7 @@ resource "aws_api_gateway_integration" "my_api_gateway_integration" {
 }
 
 resource "aws_api_gateway_deployment" "my_api_deployment" {
-  depends_on = [aws_api_gateway_method.my_api_gateway_method]
+  depends_on = [aws_api_gateway_integration.my_api_gateway_integration]
   rest_api_id = aws_api_gateway_rest_api.my_api_gateway.id
 }
 
